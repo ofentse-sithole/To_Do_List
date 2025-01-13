@@ -11,3 +11,12 @@
     background: linear-gradient(135deg, #4203a9, #90bafc);
     padding: 10px;
 }
+
+.to-do-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
