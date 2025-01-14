@@ -1,91 +1,144 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-.container{
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #4203a9, #90bafc);
-    padding: 10px;
+/* Video Background Styles */
+.video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
 }
 
-.to-do-app{
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+    padding: 10px;
+    position: relative;
+}
+
+.to-do-app, h1{
+    text-align: center;
+}
+
+.to-do-app {
     width: 100%;
     max-width: 540px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
     border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 }
 
-.input-section{
+.to-do-app h1 {
+    margin-bottom: 20px;
+    color: #002765;
+}
+
+.input-section {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
-    border-radius: 30px;
-    margin-bottom: 25px;
+    justify-content: space-between;
     background: #edeef0;
+    border-radius: 30px;
+    padding: 5px;
+    margin-bottom: 25px;
 }
 
-.input{
+#input {
     flex: 1;
     border: none;
     outline: none;
     background: transparent;
     padding: 10px;
+    font-size: 16px;
 }
 
-.button{
+#add-button {
     border: none;
     outline: none;
-    padding: 16px 50px;
-    background: #ff5945;
+    padding: 16px 40px;
+    background: #458fff;
     color: #fff;
     font-size: 16px;
     border-radius: 40px;
     cursor: pointer;
     transition: 0.3s;
-
 }
 
-.ul li{
+#add-button:hover {
+    background: #25c1ff;
+}
+
+#list {
     list-style: none;
-    font-size: 17px;
+}
+
+#list li {
+    position: relative;
     padding: 12px 8px 12px 50px;
+    font-size: 17px;
     user-select: none;
     cursor: pointer;
+    margin-bottom: 10px;
+    background: rgba(249, 249, 249, 0.9);
+    border-radius: 3px;
+    transition: 0.3s;
 }
 
-.ul li::before{
+#list li:hover {
+    background: rgba(165, 214, 230, 0.9);
+}
+
+#list li::before {
     content: '';
     position: absolute;
     height: 28px;
     width: 28px;
     border-radius: 50%;
-    background-image: url(images/unchecked.png);
+    background-image: url('images/unchecked.jpeg');
     background-size: cover;
     background-position: center;
-    top: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     left: 8px;
 }
 
-ul li.checked{
+#list li.checked {
     color: #555;
     text-decoration: line-through;
 }
 
-ul li.checked::before{
-    background-image: url(images/checked.png);
+#list li.checked::before {
+    background-image: url('images/checked.jpeg');
 }
 
-ul li span{
+#list li span {
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 40px;
     height: 40px;
     font-size: 22px;
@@ -93,8 +146,23 @@ ul li span{
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
+    transition: 0.3s;
 }
 
-ul li span:hover{
-    background: #f9f9f9;
+#list li span:hover {
+    background: #edeef0;
+    color: #ff5945;
+}
+
+/* Cursor styles */
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999; /* so that it stays on top of all other elements */
 }
