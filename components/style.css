@@ -5,11 +5,35 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Video Background Styles */
+.video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
 .container {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #4203a9, #90bafc);
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
     padding: 10px;
+    position: relative;
 }
 
 .to-do-app, h1{
@@ -19,10 +43,12 @@
 .to-do-app {
     width: 100%;
     max-width: 540px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
     border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 }
 
 .to-do-app h1 {
@@ -76,13 +102,13 @@
     user-select: none;
     cursor: pointer;
     margin-bottom: 10px;
-    background: #f9f9f9;
+    background: rgba(249, 249, 249, 0.9);
     border-radius: 3px;
     transition: 0.3s;
 }
 
 #list li:hover {
-    background: #f1f1f1;
+    background: rgba(165, 214, 230, 0.9);
 }
 
 #list li::before {
@@ -139,4 +165,4 @@
     left: 0;
     pointer-events: none;
     z-index: 99999999; /* so that it stays on top of all other elements */
-  }
+}
