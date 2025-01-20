@@ -34,6 +34,7 @@
     background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
     padding: 10px;
     position: relative;
+    align-items: center;
 }
 
 .to-do-app, h1{
